@@ -18,7 +18,10 @@
           <span class="icon-bar"></span>
         </button>
         <!--<a class="navbar-brand" href="#">LOGO</a>-->
-        <%= link_to 'Domov', root_path, class: "navbar-brand" %>
+        <%= link_to root_path, class: 'navbar-brand' do %>
+          <i class="fa fa-home"></i>
+          MolnART
+        <% end %>
       </div>
   
       <!-- Collect the nav links, forms, and other content for toggling -->
