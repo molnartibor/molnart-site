@@ -1,0 +1,30 @@
+<h1>Všetky zamestnania</h1>
+<p>
+    <%= link_to "Nové zamestanie", new_prax_path %>
+</p>
+
+<table>
+    <tr>
+        <th>Od</th>
+        <th>Do</th>
+        <th>Pozícia</th>
+        <th>Náplň</th>
+        <th>Zamestnávateľ</th>
+        <th>Druh</th>
+        <th>Sektor</th>
+    </tr>
+    
+    <% @prax.each do |prx| %>
+    <tr>
+        <td><%= prx.from%></td>
+        <td><%= prx.till%></td>
+        <td><%= prx.title%></td>
+        <td><%= prx.description%></td>
+        <td><%= prx.company%></td>
+        <td><%= prx.job%></td>
+        <td><%= prx.sector%></td>
+        <td><%= link_to 'Uprav', edit_prax_path(prx) %></td>
+        <td><%= link_to 'Ukáž', prax_path(prx) %></td>
+    </tr>
+    <% end %>
+</table>

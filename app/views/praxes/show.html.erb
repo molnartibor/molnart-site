@@ -1,0 +1,24 @@
+<h1> Zobrazenie zamestnania</h1>
+
+<p>
+    Od: <%= @prax.from %> 
+</p>
+<p>
+    Do: <%= @prax.till %> 
+</p>
+<p>
+    Pozicia: <%= @prax.title %> 
+</p>
+<p>
+    Popis: <%= @prax.description %> 
+</p>
+<p>
+    Firma: <%= @prax.company %> 
+</p>
+<p>
+    Druh prace: <%= @prax.job %> 
+</p>
+<p>
+    Sector: <%= @prax.sector %> 
+</p>
+<%= link_to "Spať na zamestnania", praxes_path %>

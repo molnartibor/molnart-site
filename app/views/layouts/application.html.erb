@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MolnartSite</title>
+  <title>Molnart</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -50,6 +50,13 @@
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
   </nav>
+  
+  <% flash.each do |name, msg| %>
+    <ul>
+      <li><%= msg %></li>
+    </ul>
+  <% end %>
+  
 <div class="container">
   <%= yield %>
 </div>

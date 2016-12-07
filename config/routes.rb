@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get '/konstrukter' => 'pages#konstrukter'
   get '/resume' => 'pages#resume'
   root 'pages#home'
+  
+  resources :praxes
+  
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
