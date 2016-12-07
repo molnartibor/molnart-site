@@ -1,30 +1,24 @@
-<h1>Všetky zamestnania</h1>
-<p>
-    <%= link_to "Nové zamestanie", new_prax_path %>
-</p>
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-xs-4">
+            <%= image_tag('Tibor/Tibor_CV.jpg', :class => "about", :height => 200, :alt => 'Tibor_about') %>
+        </div>
+        <div class="col-xs-8">
+            <h1 align="center">Hladač riešenia</h1>
+            <h2 align="center"> Životopis </h2>
+        </div>
+    </div>
+</div>
 
-<table>
-    <tr>
-        <th>Od</th>
-        <th>Do</th>
-        <th>Pozícia</th>
-        <th>Náplň</th>
-        <th>Zamestnávateľ</th>
-        <th>Druh</th>
-        <th>Sektor</th>
-    </tr>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-9">
+            <%= render 'work' %>
+        </div>
+        <div class="col-xs-3">
+            <%= render 'knowledge' %>
+        </div>
+    </div>
     
-    <% @prax.each do |prx| %>
-    <tr>
-        <td><%= prx.from%></td>
-        <td><%= prx.till%></td>
-        <td><%= prx.title%></td>
-        <td><%= prx.description%></td>
-        <td><%= prx.company%></td>
-        <td><%= prx.job%></td>
-        <td><%= prx.sector%></td>
-        <td><%= link_to 'Uprav', edit_prax_path(prx) %></td>
-        <td><%= link_to 'Ukáž', prax_path(prx) %></td>
-    </tr>
-    <% end %>
-</table>
+</div>
+

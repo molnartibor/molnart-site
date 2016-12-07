@@ -11,5 +11,52 @@ background: linear-gradient(to left, #4CA1AF , #C4E0E5); /* W3C, IE 10+/ Edge, F
     
 .about {
     border-radius: 10px;
-    box-shadow: 5px 5px 5px #ccc;
+    box-shadow: 5px 5px 10px #ccc;
 }    
+
+.praxos {
+    border-top: 1px solid #eaeaea;
+    border-top: 5px;
+    margin-top: 25px;
+}
+
+.prax_title {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.description_title {
+    margin-top: 15px;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.title {
+    margin-top: 0;
+}
+
+.list-group .list-group-item {
+    text-align: center;
+}
+
+
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+    color: #777;
+}
+
+footer a:hover { color: #222; }
+
+footer small { float: left; } 
+
+footer ul {
+    float: right;
+    list-style: none;
+}
+
+footer ul li {
+    float: left;
+    margin-left: 15px;
+}

@@ -14,7 +14,7 @@ class PraxesController < ApplicationController
     def create
         @prax = Prax.new(prax_params)
         if @prax.save
-            flash[:notice] = "Job was succesfully created!"
+            flash[:success] = "Job was succesfully created!"
             redirect_to prax_path(@prax)
         else
             render 'new'
@@ -24,7 +24,7 @@ class PraxesController < ApplicationController
     def update
         @prax = Prax.find(params[:id])
         if @prax.update(prax_params)
-            flash[:notice] = "Job was succesfully updated!"
+            flash[:success] = "Job was succesfully updated!"
             redirect_to praxes_path(@prax)
         else
             render 'edit'
@@ -35,6 +35,12 @@ class PraxesController < ApplicationController
         @prax = Prax.find(params[:id])
     end
     
+    def destroy
+        @prax = Prax.find(params[:id])
+        @prax.destroy
+        flash[:danger] = "Job was sucessfully deleted"
+        redirect_to praxes_path
+    end
 
     private
         def prax_params

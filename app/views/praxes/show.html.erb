@@ -1,24 +1,26 @@
-<h1> Zobrazenie zamestnania</h1>
+<h1 align="center"> Zobrazenie zamestnania</h1>
 
-<p>
-    Od: <%= @prax.from %> 
-</p>
-<p>
-    Do: <%= @prax.till %> 
-</p>
-<p>
-    Pozicia: <%= @prax.title %> 
-</p>
-<p>
-    Popis: <%= @prax.description %> 
-</p>
-<p>
-    Firma: <%= @prax.company %> 
-</p>
-<p>
-    Druh prace: <%= @prax.job %> 
-</p>
-<p>
-    Sector: <%= @prax.sector %> 
-</p>
-<%= link_to "Spať na zamestnania", praxes_path %>
+<div class="well col-xs-8 col-xs-offset-2">
+    <div class="centre title">
+        <h4> Práca v casovom období: </h4>
+        <h4> Od: <%= @prax.from %> | Do: <%= @prax.till %> | x rokov y mesiacov </h4>
+        <h4> pre firmu:  <strong><%= @prax.company %> </strong></h4>
+        <h4> na pozíci:  <strong><%= @prax.title %> </strong> </h4>
+        <h4> s náplnou práce: </h4> 
+        <div class="description_title"> 
+            <h4><%= @prax.description %> </h4>
+        </div>
+        <h5> <br> Kde to bola <%= @prax.job %> činnosť pre <%= @prax.sector %> sektor <br> </h5>
+          
+        <div class="praxos">
+            <%= link_to "Upraviť", edit_prax_path(@prax), class: "btn btn-lg btn-primary" %>
+            <%= link_to "Mazať", prax_path(@prax), method: :delete,
+                    data: {confirm: "Are you sure?"},
+                    class: "btn btn-lg btn-danger" %>
+            <%= link_to "Ukáž všetky", praxes_path, class: "btn btn-lg btn-success" %>
+            <!--<h4 align="center"> <%= link_to "Spať na zamestnania", praxes_path %> </h4>-->
+        </div>    
+    </div>
+</div>
+
+
