@@ -1,24 +1,42 @@
 <div class="jumbotron">
     <div class="row">
         <div class="col-xs-4">
-            <%= image_tag('Tibor/Tibor_CV.jpg', :class => "about", :height => 200, :alt => 'Tibor_about') %>
+            <%= image_tag('Tibor/Tibor_CV.jpg', :class => "about", :height => 250, :alt => 'Tibor_about') %>
         </div>
         <div class="col-xs-8">
             <h1 align="center">Hladač riešenia</h1>
-            <h2 align="center"> Životopis </h2>
+            <h2 align="center">si hladá prácu</h2>
+            <!--<h3 align="center"> Životopis </h3>-->
         </div>
     </div>
 </div>
 
+<ul class="nav nav-pills nav-justified">
+    <li role="presnetation"><a href="#work">Práca</a></li>
+    <li role="presnetation"><a href="#study">Vzdelanie</a></li>
+    <li role="presnetation"><a href="#knowledge">Znalosti a iné</a></li>
+    <li role="presnetation"><a href="#hobby">Hobby</a></li>
+    <li></li>
+</ul>
+
 <div class="container">
-    <div class="row">
-        <div class="col-xs-9">
-            <%= render 'work' %>
-        </div>
-        <div class="col-xs-3">
-            <%= render 'knowledge' %>
-        </div>
-    </div>
-    
+    <section id="work">
+        <%= render 'work' %>
+        <div class="btn btn-success"><%= link_to "TOP", praxes_path(anchor: "top") %></div>
+    </section>
+    <section id="study">
+        <%= render 'study' %>
+        <div class="btn btn-success"><%= link_to "TOP", praxes_path(anchor: "top") %></div>
+    </section>
+    <section id="knowledge">
+        <%= render 'knowledge' %>
+        <div class="btn btn-success"><%= link_to "TOP", praxes_path(anchor: "top") %></li>
+    </section>
+     <section id="hobby">
+        <%= render 'hobby' %>
+        <div class="btn btn-success"><%= link_to "TOP", praxes_path(anchor: "top") %></div>
+    </section>
 </div>
+    
+
 

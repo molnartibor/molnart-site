@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get '/project' => 'pages#project'
   get '/konstrukter' => 'pages#konstrukter'
   get '/resume' => 'pages#resume'
+  get '/contact' => 'pages#contact'
+  get '/inspire' => 'pages#inspire'
   root 'pages#home'
   
   resources :praxes

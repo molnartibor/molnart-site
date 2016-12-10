@@ -1,22 +1,18 @@
-<!--<h1 align="center">Všetky zamestnania</h1>-->
+<!--<h1 align="center">Práca</h1>-->
 
 <% @prax.each do |prx| %>
-  <div class="well well-lg">
-        <div class="date">
-            Od: <%= prx.from %> - Do: <%= prx.till %>  &emsp; &nbsp;
-            <%= link_to prx.title, prax_path(prx), class: "prax_title" %>  &emsp; &nbsp;
-            <%= link_to prx.company, prax_path(prx), class: "prax_title" %> <br>
-            <div class="description_title">
-                <%= prx.description %>
-            </div>
-        </div>
-        <div class="praxos">
-                <%= link_to 'Ukáž', prax_path(prx), class: "btn btn-success" %>
-                <%= link_to 'Uprav', edit_prax_path(prx), class: "btn btn-primary" %>
-                <%= link_to 'Zmaž',prax_path(prx), method: :delete, data: {Confirm: "Are you sure?"}, class: "btn btn-danger" %>
-        </div>
-    </div> 
-<% end %>
+<div class="list-group well">
+    <%= prx.from  %> &emsp; - &emsp; <%= prx.till %>
+    <div><%= link_to prx.title, prax_path(prx), class: "prax_title" %></div> 
+    <div><%= truncate(prx.description, length: 150) %></div>
+    <div><%= link_to prx.company, prax_path(prx), class: "prax_title" %></div>
+    <div class="praxos">
+        <%= link_to 'Ukáž', prax_path(prx), class: "btn btn-success" %>
+        <%= link_to 'Uprav', edit_prax_path(prx), class: "btn btn-primary" %>
+        <%= link_to 'Zmaž',prax_path(prx), method: :delete, data: {Confirm: "Are you sure?"}, class: "btn btn-danger" %>
+    </div>
+</div>    
+<% end %> 
 
 <p>
     <%= link_to "Nové zamestanie", new_prax_path, class: "btn btn-primary" %>
