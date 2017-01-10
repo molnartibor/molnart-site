@@ -44,6 +44,6 @@ class PraxesController < ApplicationController
 
     private
         def prax_params
-            params.require(:prax).permit(:from, :till, :title, :description, :company, :job, :sector)
+            params.require(:prax).permit(:from, :till, :title, :description, :positiv, :company, :company_text)
         end
 end

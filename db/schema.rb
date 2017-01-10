@@ -14,13 +14,13 @@
 ActiveRecord::Schema.define(version: 20161207083611) do
 
   create_table "praxes", force: :cascade do |t|
-    t.string   "from"
-    t.string   "till"
+    t.date     "from"
+    t.date     "till"
     t.string   "title"
     t.text     "description"
+    t.text     "positiv"
     t.string   "company"
-    t.string   "job"
-    t.string   "sector"
+    t.text     "company_text"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

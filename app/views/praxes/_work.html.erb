@@ -2,10 +2,15 @@
 
 <% @prax.each do |prx| %>
 <div class="list-group well">
-    <%= prx.from  %> &emsp; - &emsp; <%= prx.till %>
+    <div class="oddo">
+        <%= link_to prx.from.strftime("%B %Y"), prax_path(prx) %> 
+        -
+        <%= link_to prx.till.strftime("%B %Y"), prax_path(prx) %>
+    </div>
     <div><%= link_to prx.title, prax_path(prx), class: "prax_title" %></div> 
-    <div><%= truncate(prx.description, length: 150) %></div>
-    <div><%= link_to prx.company, prax_path(prx), class: "prax_title" %></div>
+    <div><%= truncate(prx.description, length: 50) %></div>
+    <div><%= link_to prx.company, prax_path(prx), class: "prx_txt" %></div>
+    
     <div class="praxos">
         <%= link_to 'Ukáž', prax_path(prx), class: "btn btn-success" %>
         <%= link_to 'Uprav', edit_prax_path(prx), class: "btn btn-primary" %>

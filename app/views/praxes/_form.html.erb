@@ -4,16 +4,12 @@
     <div class="col-xs-12">
         <%= form_for(@prax, :html => {class: "form-horizontal", role: "form"}) do |f| %>
             <div class="form-group">
-                <div class="control-label col-xs-2">
-                    <%= f.label :Od %>
-                </div>
-                <div class="col-xs-3">
+                <div class="control-label col-xs-2"><%= f.label :Od %></div>
+                <div class="col-xs-4">
                     <%= f.text_field :from, class: "form-control", placeholder: "Od", autofocus: true %>
                 </div>
-                <div class="control-label col-xs-2">
-                    <%= f.label :Do %>
-                </div>
-                <div class="col-xs-3">
+                <div class="control-label col-xs-2"><%= f.label :Do %></div>
+                <div class="col-xs-4">
                     <%= f.text_field :till, class: "form-control", placeholder: "Do", autofocus: true %>
                 </div>
             </div>
@@ -21,15 +17,21 @@
                 <div class="control-label col-xs-2">
                     <%= f.label :Zamestnávateľ %>
                 </div>
-                <div class="col-xs-8">
-                    <%= f.text_field :company, class: "form-control", placeholder: "Firma" %>
+                <div class="col-xs-4">
+                    <%= f.text_field :company, class: "form-control", placeholder: "Zamesnávateľ" %>
+                </div>
+                <div class="control-label col-xs-2">
+                    <%= f.label :Odvetvie %>
+                </div>
+                <div class="col-xs-4">
+                    <%= f.text_field :company_text, class: "form-control", placeholder: "Odvetvie, činnosť" %>
                 </div>
             </div>
             <div class="form-group">
                 <div class="control-label col-xs-2">
                     <%= f.label :Pozícia %>
                 </div>
-                <div class="col-xs-8">
+                <div class="col-xs-10">
                     <%= f.text_field :title, class: "form-control", placeholder: "Pozícia", autofocus: true %>
                 </div>
             </div>    
@@ -37,25 +39,20 @@
                 <div class="control-label col-xs-2">
                     <%= f.label :Činnosť  %>
                 </div>
-                <div class="col-xs-8">
+                <div class="col-xs-10">
                     <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Popis pozície" %>
                 </div>
             </div>
-            
-            <div class="form-group">    
+            <div class="form-group">
                 <div class="control-label col-xs-2">
-                     <%= f.label :Druh_práce %>
+                    <%= f.label :Pozitívá  %>
                 </div>
-                <div class="col-xs-3">
-                    <%= f.text_field :job, class: "form-control", placeholder: "Druh práce" %>
-                </div>
-                <div class="control-label col-xs-2">
-                    <%= f.label :Sektor %>
-                </div>
-                <div class="col-xs-3">
-                    <%= f.text_field :sector, class: "form-control", placeholder: "Sektor pôsobenia" %>
+                <div class="col-xs-10">
+                    <%= f.text_area :positiv, rows: 10, class: "form-control", placeholder: "Pozitívá" %>
                 </div>
             </div>
+            
+            
             <div class="form-group">
                 <div class="col-xs-offset-2 col-xs-10">
                     <%= f.submit class: "btn btn-primary btn-lg" %>

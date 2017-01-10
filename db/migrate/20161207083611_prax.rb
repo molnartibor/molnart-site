@@ -1,13 +1,16 @@
 class Prax < ActiveRecord::Migration
   def change
     create_table :praxes do |t|
-      t.string :from #od
-      t.string :till #do
-      t.string :title #pozicia
-      t.text :description #popis
+      t.date :from #od
+      t.date :till #do
+      t.string :title #pozicia vyvojar
+      t.text :description #popis 
+      t.text :positiv #pozitiva
       t.string :company #zamestnavatel
-      t.string :job #druh prace
-      t.string :sector #pracovny sektor
+      t.text :company_text #co firma robi
+      #t.string :job #druh prace
+      #t.string :sector #pracovny sektor
+      
       t.timestamps
     end
   end
