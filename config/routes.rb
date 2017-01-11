@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :praxes
+  
   get '/about' => 'pages#about'
   get '/project' => 'pages#project'
   get '/konstrukter' => 'pages#konstrukter'
@@ -7,7 +10,7 @@ Rails.application.routes.draw do
   get '/inspire' => 'pages#inspire'
   root 'pages#home'
   
-  resources :praxes
+  
   
   
   # The priority is based upon order of creation: first created -> highest priority.

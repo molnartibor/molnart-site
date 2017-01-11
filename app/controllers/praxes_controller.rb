@@ -13,9 +13,11 @@ class PraxesController < ApplicationController
     
     def create
         @prax = Prax.new(prax_params)
+        
         if @prax.save
             flash[:success] = "Job was succesfully created!"
             redirect_to prax_path(@prax)
+            
         else
             render 'new'
         end

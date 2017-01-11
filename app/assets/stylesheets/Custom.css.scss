@@ -19,7 +19,11 @@ background: linear-gradient(to left, #4CA1AF , #C4E0E5); /* W3C, IE 10+/ Edge, F
 .no-border {// for the list
     border: none;
 }
-
+.remove { //remove hyperlink
+    text-decoration: none;
+    color: black;
+    
+}
 .oddo { //text years
     margin-top: 15px;
     font-size: 1.3em;

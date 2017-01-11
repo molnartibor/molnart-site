@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="row">
+  <div class="col-xs-12 form-horizontal well">
+    <div class="form-group">
+      <div class="control-label col-sm-2"> 
+        <strong>Name:</strong>
+      </div>
+      <div class="col-sm-8">
+        <%= @user.name %>
+      </div>
+    </div>  
+    <div class="control-label col-sm-2"> 
+        <strong>Emial:</strong>
+      </div>
+      <div class="col-sm-8">
+        <%= @user.email %>
+      </div>
+    </div> 
+      <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-success btn-lg" %> |
+      <%= link_to 'Back', users_path, class: "btn btn-primary btn-lg" %>
+   
+</div>
