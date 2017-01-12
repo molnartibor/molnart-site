@@ -23,7 +23,7 @@
 
 <div class="praxos">
         <%= link_to "Ukáž všetky", praxes_path, class: "btn btn-lg btn-success" %>
-        <% if logged_in? %>
+        <% if logged_in? && current_user.admin? %>
             <%= link_to "Upraviť", edit_prax_path(@prax), class: "btn btn-lg btn-primary" %>
             <%= link_to "Mazať", prax_path(@prax), method: :delete,
                 data: {confirm: "Are you sure?"},

@@ -1,5 +1,6 @@
 class PraxesController < ApplicationController
-   before_action :require_user, only: [ :edit, :update, :destroy ]
+   before_action :require_logged, only: [ :edit, :update, :destroy ]
+   #before_action :require_admin, only: [ :edit, :update, :destroy]
    
     def index
         @prax = Prax.all
@@ -47,7 +48,14 @@ class PraxesController < ApplicationController
     end
 
     private
-    
+        def require_logged
+            if logged_in?
+            else
+                flash[:danger] = "Only logged users can perform that action"
+                redirect_to praxes_path
+            end
+        end
+        
         def prax_params
             params.require(:prax).permit(:from, :till, :title, :description, :positiv, :company, :company_text)
         end

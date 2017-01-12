@@ -13,7 +13,7 @@
     
     <div class="praxos">
         <%= link_to 'Ukáž', prax_path(prx), class: "btn btn-success" %>
-        <% if logged_in? %>
+        <% if logged_in? && current_user.admin? %>
             <%= link_to 'Uprav', edit_prax_path(prx), class: "btn btn-primary" %>
             <%= link_to 'Zmaž',prax_path(prx), method: :delete, 
             data: {Confirm: "Are you sure?"}, class: "btn btn-danger" %>
@@ -21,7 +21,7 @@
     </div>
 </div>    
 <% end %> 
-<% if logged_in? %>
+<% if logged_in? && current_user.admin? %>
 <p>
     <%= link_to "Nové zamestanie", new_prax_path, class: "btn btn-primary" %>
 </p>

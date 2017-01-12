@@ -30,9 +30,10 @@
     <% if logged_in? %>  
       <%= link_to 'Back', users_path, class: "btn btn-primary" %> |
       <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-success" %> |
-      <%= link_to 'Destroy', @user, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %> |
-     <%#= if logged_in? %>
-     <div class="btn btn-success"> You are an admin </div>
+      <%= link_to 'Destroy', @user, class: "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %> 
+      <% if @user.admin? %>
+        | <div class="btn btn-success"> You are an administrator! </div>
+      <% end %>  
      <% end %>
    </div> 
 </div>

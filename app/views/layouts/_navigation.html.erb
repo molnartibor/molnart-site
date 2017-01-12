@@ -33,12 +33,14 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
         <% if logged_in?  %>
-            <li><%= link_to "Log out", logout_path, method: :delete %></li>
+            <li><%= link_to "Log out #{current_user.name}", logout_path, method: :delete %></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage<span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><%= link_to "Users", users_path %></li>
-                <li><%= link_to "Edit CV", praxes_path %></li>
+              <% if current_user.admin? %> 
+                  <li><%= link_to "Users", users_path %></li>
+                  <li><%= link_to "Edit CV", praxes_path %></li>
+              <% end %>  
                 <li><%= link_to "Edit your profile", edit_user_path(current_user) %></li>
                 <li><%= link_to "View your profile", user_path(current_user) %></li>
                 <!--<li><a href="#">something another</a></li>-->
