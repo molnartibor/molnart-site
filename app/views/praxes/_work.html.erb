@@ -13,12 +13,16 @@
     
     <div class="praxos">
         <%= link_to 'Ukáž', prax_path(prx), class: "btn btn-success" %>
-        <%= link_to 'Uprav', edit_prax_path(prx), class: "btn btn-primary" %>
-        <%= link_to 'Zmaž',prax_path(prx), method: :delete, data: {Confirm: "Are you sure?"}, class: "btn btn-danger" %>
+        <% if logged_in? %>
+            <%= link_to 'Uprav', edit_prax_path(prx), class: "btn btn-primary" %>
+            <%= link_to 'Zmaž',prax_path(prx), method: :delete, 
+            data: {Confirm: "Are you sure?"}, class: "btn btn-danger" %>
+        <% end %>     
     </div>
 </div>    
 <% end %> 
-
+<% if logged_in? %>
 <p>
     <%= link_to "Nové zamestanie", new_prax_path, class: "btn btn-primary" %>
 </p>
+<% end %>

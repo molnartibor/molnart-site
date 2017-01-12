@@ -28,29 +28,30 @@
             </ul>
           </li>
           <li><%= link_to "Projekty", project_path %></li>
-          <li><%= link_to "Na Stránnke sa pracuje!", root_path %></li>
           <!--<li><%= link_to "Inšprácia", inspire_path %></li>-->
           
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to "Kontakt", contact_path %></li>
+        <% if logged_in?  %>
+            <li><%= link_to "Log out", logout_path, method: :delete %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Users", users_path %></li>
+                <li><%= link_to "Edit CV", praxes_path %></li>
+                <li><%= link_to "Edit your profile", edit_user_path(current_user) %></li>
+                <li><%= link_to "View your profile", user_path(current_user) %></li>
+                <!--<li><a href="#">something another</a></li>-->
+                </ul>
+            </li>
+          <% else %> 
+            <li><%= link_to "Prihlasiť sa", login_path %></li>
+            <li><%#= link_to "Registrovať sa", signup_path %></li>
+          <% end %>
+          <li><%#= link_to "Kontakt", contact_path %></li>
           <li><%= link_to "O mne", about_path %></li>
-          <li><a href="https://alpha-blog-molnart.herokuapp.com/", target="_blank">Blog</a></li>
-          
-          <!--
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projekty<span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Funkčne Svietidla</a></li>
-              <li><a href="#">Blog</a></li>
-              <!--<li role="separator" class="divider"></li>-->
-              <!--<li>-->
-                <!--<a href="/project">Vyrobky</a>-->
-              <!--  <%= link_to "Projekty", project_path %>-->
-              <!--</li>-->
+          <!--<li><a href="https://alpha-blog-molnart.herokuapp.com/", target="_blank">Blog</a></li>-->
               
-            </ul>
-          </li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

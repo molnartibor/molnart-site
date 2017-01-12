@@ -23,11 +23,12 @@
 
 <div class="praxos">
         <%= link_to "Ukáž všetky", praxes_path, class: "btn btn-lg btn-success" %>
-        <%= link_to "Upraviť", edit_prax_path(@prax), class: "btn btn-lg btn-primary" %>
-        <%= link_to "Mazať", prax_path(@prax), method: :delete,
+        <% if logged_in? %>
+            <%= link_to "Upraviť", edit_prax_path(@prax), class: "btn btn-lg btn-primary" %>
+            <%= link_to "Mazať", prax_path(@prax), method: :delete,
                 data: {confirm: "Are you sure?"},
                 class: "btn btn-lg btn-danger" %>
-        
+        <% end %>
         <!--<h4 align="center"> <%= link_to "Spať na zamestnania", praxes_path %> </h4>-->
     </div>    
 </div>

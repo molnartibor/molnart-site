@@ -1,4 +1,6 @@
 class PraxesController < ApplicationController
+   before_action :require_user, only: [ :edit, :update, :destroy ]
+   
     def index
         @prax = Prax.all
     end
@@ -45,6 +47,7 @@ class PraxesController < ApplicationController
     end
 
     private
+    
         def prax_params
             params.require(:prax).permit(:from, :till, :title, :description, :positiv, :company, :company_text)
         end

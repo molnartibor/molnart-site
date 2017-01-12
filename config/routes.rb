@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
-  resources :users
   resources :praxes
+  #resources :users
+  # create a rout for sign up
+  get 'signup', to: 'users#new'
+  # post 'users', to: 'users#create' or the resources
+  resources :users, except: [:new]
+  
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
   
   get '/about' => 'pages#about'
   get '/project' => 'pages#project'
